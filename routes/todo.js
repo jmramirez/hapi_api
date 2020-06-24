@@ -1,3 +1,5 @@
+const Joi = require('@hapi/joi')
+
 const todoList = [
     {
         title: 'Shopping',
@@ -43,7 +45,14 @@ module.exports = [
           const todo = request.payload;
           todoList.push(todo);
           return h.response({message: 'created'})
-        }
+      },
+      options: {
+          validate: {
+              payload: Joi.object({
+                  title: Joi.string().required()
+              })
+          }
+      }
     },
     {
         method: 'PUT',
