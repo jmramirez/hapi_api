@@ -1,0 +1,23 @@
+{
+  "name": "hapi_api",
+  "version": "1.0.0",
+  "description": "A simple hapi api simulating a todo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmramirez/hapi_api.git"
+  },
+  "author": "Jose M Ramirez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmramirez/hapi_api/issues"
+  },
+  "homepage": "https://github.com/jmramirez/hapi_api#readme",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "lodash": "^4.17.15"
+  }
+}
