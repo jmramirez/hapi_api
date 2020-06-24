@@ -1,4 +1,6 @@
 const Hapi = require('@hapi/hapi')
+const routes = {}
+routes.todo = require('./routes/todo')
 
 const init = async () => {
 
@@ -15,6 +17,8 @@ const init = async () => {
             return h.response({ message: 'hello, world!!'})
         }
     })
+
+    server.route(routes.todo)
 
     await server.register({
         plugin: require('@hapi/good'),
