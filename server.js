@@ -8,6 +8,31 @@ const init = async () => {
         host: 'localhost'
     })
 
+    server.route({
+        method: 'GET',
+        path: '/',
+        handler: (req, h) => {
+            return h.response({ message: 'hello, world!!'})
+        }
+    })
+
+    await server.register({
+        plugin: require('@hapi/good'),
+        options : {
+            ops: {
+                interval: 1000
+            },
+            reporters: {
+                consoleReporters: [
+                    {
+                        module: '@hapi/good-console'
+                    },
+                    'stdout'
+                ]
+            }
+        }
+    })
+
     await server.start();
     console.log(`Server running at: ${server.info.uri}`)
 }
